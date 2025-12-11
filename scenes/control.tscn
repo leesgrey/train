@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1owfwm7ynm1r"]
+
+[ext_resource type="Script" uid="uid://c31csrrarhwm0" path="res://scripts/ransom.gd" id="1_5p55f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p55f"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Control" type="Control" node_paths=PackedStringArray("paragraph_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p55f")
+text = "ransom test \\n exposition \\n character \\n setting"
+paragraph_container = NodePath("ColorRect/PanelContainer/VBoxContainer")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8671276, 0.87661916, 0.784402, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 364.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5p55f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/PanelContainer"]
+layout_mode = 2
+
+[node name="@HFlowContainer@315636" type="HFlowContainer" parent="ColorRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="@PanelContainer@315639" type="PanelContainer" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315636"]
+layout_mode = 2
+
+[node name="@RichTextLabel@315638" type="RichTextLabel" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315636/@PanelContainer@315639"]
+layout_mode = 2
+text = "ransom"
+fit_content = true
+autowrap_mode = 0
+
+[node name="@PanelContainer@315642" type="PanelContainer" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315636"]
+layout_mode = 2
+
+[node name="@RichTextLabel@315641" type="RichTextLabel" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315636/@PanelContainer@315642"]
+layout_mode = 2
+text = "test"
+fit_content = true
+autowrap_mode = 0
+
+[node name="@HFlowContainer@315643" type="HFlowContainer" parent="ColorRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="@PanelContainer@315646" type="PanelContainer" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315643"]
+layout_mode = 2
+
+[node name="@RichTextLabel@315645" type="RichTextLabel" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315643/@PanelContainer@315646"]
+layout_mode = 2
+text = "exposition"
+fit_content = true
+autowrap_mode = 0
+
+[node name="@HFlowContainer@315647" type="HFlowContainer" parent="ColorRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="@PanelContainer@315650" type="PanelContainer" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315647"]
+layout_mode = 2
+
+[node name="@RichTextLabel@315649" type="RichTextLabel" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315647/@PanelContainer@315650"]
+layout_mode = 2
+text = "character"
+fit_content = true
+autowrap_mode = 0
+
+[node name="@HFlowContainer@315651" type="HFlowContainer" parent="ColorRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="@PanelContainer@315654" type="PanelContainer" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315651"]
+layout_mode = 2
+
+[node name="@RichTextLabel@315653" type="RichTextLabel" parent="ColorRect/PanelContainer/VBoxContainer/@HFlowContainer@315651/@PanelContainer@315654"]
+layout_mode = 2
+text = "setting"
+fit_content = true
+autowrap_mode = 0

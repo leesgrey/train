@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://i6ccpu7jw66o"]
+
+[ext_resource type="Script" uid="uid://bx3nc72ayaewp" path="res://scripts/debug_manager.gd" id="1_1uwqr"]
+
+[sub_resource type="Theme" id="Theme_1uwqr"]
+default_font_size = 12
+
+[node name="Debug" type="Control" node_paths=PackedStringArray("container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1uwqr")
+script = ExtResource("1_1uwqr")
+container = NodePath("VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "key: value"
+fit_content = true

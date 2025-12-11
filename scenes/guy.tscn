@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjvrj5p4sbktj"]
+
+[ext_resource type="PackedScene" uid="uid://bfnychq1d6hji" path="res://assets/guy.blend" id="1_lwmn2"]
+
+[node name="guy" instance=ExtResource("1_lwmn2")]
+
+[node name="Sphere" parent="Armature/Skeleton3D" index="0"]
+layers = 2

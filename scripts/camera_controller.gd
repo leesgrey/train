@@ -43,7 +43,6 @@ func _ready() -> void:
 		Facing.DESK: desk_target
 	}
 	neck_bone = skeleton.find_bone(bone_name)
-	#print("bone is ", neck_bone)
 
 
 func _start():
@@ -88,7 +87,6 @@ func _input(event):
 
 
 func turn_to(facing: Facing, skip_tween := false):
-	#print(facing)
 	if Engine.is_editor_hint():
 		facing_to_target = {
 			Facing.WINDOW: window_target,

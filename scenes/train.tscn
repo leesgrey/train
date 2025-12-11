@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://b14n26udl6jng"]
 
-[ext_resource type="PackedScene" uid="uid://1456alu1jhdb" path="res://assets/train.blend" id="1_68jl8"]
+[ext_resource type="PackedScene" uid="uid://1456alu1jhdb" path="res://assets/blend/train.blend" id="1_68jl8"]
 
 [node name="train" instance=ExtResource("1_68jl8")]

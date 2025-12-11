@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dr0detxk7wugm"
-path="res://.godot/imported/righthand.blend-decffbdb8089af737d82520a94cb9a3f.scn"
+uid="uid://slr20uotqflv"
+path="res://.godot/imported/character_cowboy.blend-ed344eac7b0bdc07c5e3e74230abc3db.scn"
 
 [deps]
 
-source_file="res://assets/righthand.blend"
-dest_files=["res://.godot/imported/righthand.blend-decffbdb8089af737d82520a94cb9a3f.scn"]
+source_file="res://assets/blend/character_cowboy.blend"
+dest_files=["res://.godot/imported/character_cowboy.blend-ed344eac7b0bdc07c5e3e74230abc3db.scn"]
 
 [params]
 

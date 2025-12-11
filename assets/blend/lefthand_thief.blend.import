@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bodv55huunywy"
-path="res://.godot/imported/hitman.blend-a030e0e119eabb816d46ee202e0ad1fc.scn"
+uid="uid://4knvknx3bnhd"
+path="res://.godot/imported/lefthand_thief.blend-5db93a9f01be15e2bde9047f36c25095.scn"
 
 [deps]
 
-source_file="res://assets/hitman.blend"
-dest_files=["res://.godot/imported/hitman.blend-a030e0e119eabb816d46ee202e0ad1fc.scn"]
+source_file="res://assets/blend/lefthand_thief.blend"
+dest_files=["res://.godot/imported/lefthand_thief.blend-5db93a9f01be15e2bde9047f36c25095.scn"]
 
 [params]
 
@@ -37,7 +37,19 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"lefthand_thief_Cube_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/lefthand_thief.res",
+"save_to_file/path": "uid://sgkofduvlyab"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://1b4blfght74w"
-path="res://.godot/imported/mirror.blend-4dc83f9ce7367f8d0f08032ebd882bd0.scn"
+path="res://.godot/imported/mirror.blend-3e02911a862758eb6d792beff5dd6298.scn"
 
 [deps]
 
-source_file="res://assets/mirror.blend"
-dest_files=["res://.godot/imported/mirror.blend-4dc83f9ce7367f8d0f08032ebd882bd0.scn"]
+source_file="res://assets/blend/mirror.blend"
+dest_files=["res://.godot/imported/mirror.blend-3e02911a862758eb6d792beff5dd6298.scn"]
 
 [params]
 

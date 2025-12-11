@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterSwapInfo" load_steps=4 format=3 uid="uid://drvaru4ywahmx"]
+
+[ext_resource type="ArrayMesh" uid="uid://blj3c7wgj7bag" path="res://assets/character_null.res" id="1_haovt"]
+[ext_resource type="Script" uid="uid://ch2cpj7p7528x" path="res://scripts/swapping/character_swap_info.gd" id="1_mmdwo"]
+[ext_resource type="ArrayMesh" uid="uid://mwtnm8rkhgm0" path="res://assets/character_hitman.res" id="2_o5vmn"]
+
+[resource]
+script = ExtResource("1_mmdwo")
+models = Dictionary[int, Mesh]({
+0: ExtResource("1_haovt"),
+2: ExtResource("2_o5vmn")
+})
+metadata/_custom_type_script = "uid://ch2cpj7p7528x"

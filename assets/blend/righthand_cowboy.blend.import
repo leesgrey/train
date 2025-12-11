@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1456alu1jhdb"
-path="res://.godot/imported/train.blend-876f40935a40d695342d64c2a6e4b5c5.scn"
+uid="uid://cgnv4qoqtuodm"
+path="res://.godot/imported/righthand_cowboy.blend-8b953c62fec1b16a3dc4dcb38135ea26.scn"
 
 [deps]
 
-source_file="res://assets/train.blend"
-dest_files=["res://.godot/imported/train.blend-876f40935a40d695342d64c2a6e4b5c5.scn"]
+source_file="res://assets/blend/righthand_cowboy.blend"
+dest_files=["res://.godot/imported/righthand_cowboy.blend-8b953c62fec1b16a3dc4dcb38135ea26.scn"]
 
 [params]
 
@@ -37,7 +37,19 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"righthand_cowboy_Cube_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/righthand_cowboy.res",
+"save_to_file/path": "uid://b442m1xpwtwq7"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
@@ -56,4 +68,4 @@ blender/materials/export_materials=1
 blender/animation/limit_playback=true
 blender/animation/always_sample=true
 blender/animation/group_tracks=true
-gltf/naming_version=0
+gltf/naming_version=2

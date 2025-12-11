@@ -8,15 +8,12 @@ var width: float
 func _ready() -> void:
 	var aabb = _calculate_spatial_bounds(self, false)
 	width = aabb.size.z
-	#print(width)
 
 
 func _process(delta: float) -> void:
 	self.transform.origin.z += speed * delta
 	if self.transform.origin.z > width:
 		self.transform.origin.z = reset_point.position.z
-
-	#print(self.transform.origin)
 
 
 #https://www.reddit.com/r/godot/comments/18bfn0n/how_to_calculate_node3d_bounding_box/

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du88udr1orris"
-path.s3tc="res://.godot/imported/hitman_closed.png-687c27bc7015b989a229448d8db26dee.s3tc.ctex"
+uid="uid://bpxexgfj1c7se"
+path.s3tc="res://.godot/imported/nullguy.png-c3de467542a1bc642dc737dd0b3ad300.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/hitman_closed.png"
-dest_files=["res://.godot/imported/hitman_closed.png-687c27bc7015b989a229448d8db26dee.s3tc.ctex"]
+source_file="res://assets/textures/nullguy.png"
+dest_files=["res://.godot/imported/nullguy.png-c3de467542a1bc642dc737dd0b3ad300.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterSwapInfo" load_steps=5 format=3 uid="uid://d2hopufqvitmg"]
+
+[ext_resource type="Script" uid="uid://ch2cpj7p7528x" path="res://scripts/swapping/character_swap_info.gd" id="1_ij7f0"]
+[ext_resource type="ArrayMesh" uid="uid://chehgdyby8bmn" path="res://assets/righthand_null.res" id="1_xbkv8"]
+[ext_resource type="ArrayMesh" uid="uid://cjeruhr73no72" path="res://assets/righthand_cowboy.res" id="2_jx6cg"]
+[ext_resource type="ArrayMesh" uid="uid://bu7ei0clauspr" path="res://assets/righthand_thief.res" id="3_qc6n2"]
+
+[resource]
+script = ExtResource("1_ij7f0")
+models = Dictionary[int, Mesh]({
+0: ExtResource("1_xbkv8"),
+1: ExtResource("2_jx6cg"),
+3: ExtResource("3_qc6n2")
+})
+metadata/_custom_type_script = "uid://ch2cpj7p7528x"

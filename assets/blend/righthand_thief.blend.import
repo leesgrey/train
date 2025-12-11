@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfnychq1d6hji"
-path="res://.godot/imported/guy.blend-ae88bd986bf66a6ba2c306bebc04e89c.scn"
+uid="uid://ct5mcdh63j6ub"
+path="res://.godot/imported/righthand_thief.blend-b9e5ae83c730e025e702067de8772009.scn"
 
 [deps]
 
-source_file="res://assets/guy.blend"
-dest_files=["res://.godot/imported/guy.blend-ae88bd986bf66a6ba2c306bebc04e89c.scn"]
+source_file="res://assets/blend/righthand_thief.blend"
+dest_files=["res://.godot/imported/righthand_thief.blend-b9e5ae83c730e025e702067de8772009.scn"]
 
 [params]
 
@@ -37,7 +37,19 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"righthand_thief_Cube_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/righthand_thief.res",
+"save_to_file/path": "uid://dxnojhldrdfkt"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
@@ -56,4 +68,4 @@ blender/materials/export_materials=1
 blender/animation/limit_playback=true
 blender/animation/always_sample=true
 blender/animation/group_tracks=true
-gltf/naming_version=0
+gltf/naming_version=2

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjdxs3l454upk"
-path.s3tc="res://.godot/imported/hitman_body.png-b21a4c7d6ad7ba9521b769ad35f52e82.s3tc.ctex"
+uid="uid://b72y04lj8o8xy"
+path.s3tc="res://.godot/imported/Seat.png-c806a1f68fd58a55aa71ce95d9fdedf6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/hitman_body.png"
-dest_files=["res://.godot/imported/hitman_body.png-b21a4c7d6ad7ba9521b769ad35f52e82.s3tc.ctex"]
+source_file="res://assets/textures/Seat.png"
+dest_files=["res://.godot/imported/Seat.png-c806a1f68fd58a55aa71ce95d9fdedf6.s3tc.ctex"]
 
 [params]
 

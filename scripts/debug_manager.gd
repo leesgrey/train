@@ -17,7 +17,6 @@ func _update_view():
 		entry.queue_free()
 
 	for key in dict:
-		#print(key)
 		var label := RichTextLabel.new()
 		label.text = "%s: %s" % [key, str(dict[key])]
 		label.fit_content = true

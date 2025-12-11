@@ -1,11 +1,12 @@
-[gd_scene load_steps=59 format=4 uid="uid://cbxii32a5ritu"]
+[gd_scene load_steps=65 format=4 uid="uid://cbxii32a5ritu"]
 
 [ext_resource type="Script" uid="uid://h5gv7v4akpw4" path="res://scripts/ui.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://okcih88rteeh" path="res://scripts/camera_controller.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://ndiryhk6o5m1" path="res://scripts/player.gd" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://dr0detxk7wugm" path="res://assets/righthand.blend" id="3_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://dr0detxk7wugm" path="res://assets/blend/righthand_null.blend" id="3_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://b14n26udl6jng" path="res://scenes/train.tscn" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://bqciik4jy6yeq" path="res://icon.svg" id="5_muem4"]
+[ext_resource type="Resource" uid="uid://d2hopufqvitmg" path="res://resources/right_hand_swap.tres" id="5_yc10j"]
 [ext_resource type="Shader" uid="uid://4fv2hrkb57ts" path="res://scripts/shaders/star.gdshader" id="6_jbj1t"]
 [ext_resource type="Script" uid="uid://c6tyq2xk85fpg" path="res://scripts/character_choice.gd" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://db0gorm1xv51u" path="res://scripts/drop_area.gd" id="8_choun"]
@@ -13,11 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://d1owfwm7ynm1r" path="res://scenes/control.tscn" id="10_trceg"]
 [ext_resource type="Shader" uid="uid://b7jic6v04x4ic" path="res://scripts/shaders/outline.gdshader" id="10_ya4ey"]
 [ext_resource type="Shader" uid="uid://imty0utqtvef" path="res://scripts/shaders/test.gdshader" id="11_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://f5s3c2hp007o" path="res://assets/lefthand.blend" id="11_trceg"]
+[ext_resource type="PackedScene" uid="uid://f5s3c2hp007o" path="res://assets/blend/lefthand_null.blend" id="11_trceg"]
 [ext_resource type="Script" uid="uid://dg8li57514y8x" path="res://scripts/parallax_layer.gd" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://c3cgkt4ol780v" path="res://scripts/setting_choice.gd" id="12_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://cjvrj5p4sbktj" path="res://scenes/guy.tscn" id="13_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://dcfl3w3dgaunn" path="res://scenes/hitman.tscn" id="14_jbj1t"]
+[ext_resource type="Resource" uid="uid://cejpfp4lwt5ie" path="res://resources/left_hand_swap.tres" id="18_yc10j"]
+[ext_resource type="Script" uid="uid://4o225anfmcw5" path="res://scripts/character_model_swapper.gd" id="19_0ld40"]
+[ext_resource type="Resource" uid="uid://drvaru4ywahmx" path="res://resources/character_swap.tres" id="20_yc10j"]
 
 [sub_resource type="Animation" id="Animation_0wfyh"]
 length = 0.001
@@ -154,6 +157,19 @@ albedo_texture = SubResource("ViewportTexture_0ld40")
 [sub_resource type="BoxMesh" id="BoxMesh_yc10j"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_gqmmt")
+size = Vector3(0.095, 0.02, 0.001)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yc10j"]
+viewport_path = NodePath("Environment/Train/Choices/hitman/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jscy8"]
+resource_local_to_scene = true
+albedo_color = Color(0.6670666, 0.56301033, 0.48126113, 1)
+albedo_texture = SubResource("ViewportTexture_yc10j")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pm3ni"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_jscy8")
 size = Vector3(0.095, 0.02, 0.001)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dp3eg"]
@@ -374,6 +390,13 @@ camera = NodePath("MainCamera")
 [node name="righthand" parent="Environment/Train/Player" instance=ExtResource("3_jkv2x")]
 transform = Transform3D(-0.0076885456, -2.7348931e-10, -0.03925412, 0.015877165, 0.036582023, -0.003109796, 0.035899885, -0.01617885, -0.007031565, -0.54886895, 0.9506792, 0.18584049)
 
+[node name="RightHandModelSwapper" type="Node" parent="Environment/Train/Player/righthand" node_paths=PackedStringArray("target")]
+script = ExtResource("19_0ld40")
+target = NodePath("../Cube")
+models = ExtResource("5_yc10j")
+defer_until_letter_view_left = true
+metadata/_custom_type_script = "uid://4o225anfmcw5"
+
 [node name="MainCamera" type="Camera3D" parent="Environment/Train/Player" node_paths=PackedStringArray("window_target", "door_target", "ceiling_target", "mirror_target", "desk_target", "skeleton")]
 transform = Transform3D(0.7056782, -0.028896185, 0.70794296, -0.01913006, 0.99802667, 0.05980543, -0.7082741, -0.055746388, 0.703733, -0.678511, 1.27, 0.291688)
 cull_mask = 1048573
@@ -387,7 +410,7 @@ door_target = NodePath("../../door")
 ceiling_target = NodePath("../../ceiling")
 mirror_target = NodePath("../../mirror")
 desk_target = NodePath("../../desk")
-skeleton = NodePath("../../guy2/Armature/Skeleton3D")
+skeleton = NodePath("../../guy/Armature/Skeleton3D")
 bone_name = "Neck"
 turn_speed = 1
 facing_to_rotation = Dictionary[int, Quaternion]({
@@ -525,6 +548,47 @@ mesh = SubResource("BoxMesh_yc10j")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00444901, 0.0047286153, 0)
 shape = SubResource("ConcavePolygonShape3D_ya4ey")
 
+[node name="hitman" type="StaticBody3D" parent="Environment/Train/Choices" node_paths=PackedStringArray("mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49643692, 0.821221, 0.14289123)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("6_tefeu")
+character = 2
+mesh = NodePath("MeshInstance3D")
+outline_shader = SubResource("ShaderMaterial_muem4")
+
+[node name="SubViewport" type="SubViewport" parent="Environment/Train/Choices/hitman"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(512, 80)
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Train/Choices/hitman/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6202413, 0.91287065, 0.5076719, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Environment/Train/Choices/hitman/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "hitman"
+fit_content = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Train/Choices/hitman"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.00444901, 0.0047286153, 0)
+mesh = SubResource("BoxMesh_pm3ni")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/Train/Choices/hitman"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00444901, 0.0047286153, 0)
+shape = SubResource("ConcavePolygonShape3D_ya4ey")
+
 [node name="desert" type="StaticBody3D" parent="Environment/Train/Choices" node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49643692, 0.821221, 0.02123823)
 collision_layer = 2
@@ -625,18 +689,22 @@ shape = SubResource("ConcavePolygonShape3D_eb6dy")
 [node name="lefthand" parent="Environment/Train" instance=ExtResource("11_trceg")]
 transform = Transform3D(0.0010678271, 0.021890117, -0.033461656, -0.020917477, 0.0288339, 0.01819519, 0.034078125, 0.0170126, 0.01221689, -0.7989149, 0.81341386, 0.12698212)
 
-[node name="hitman2" parent="Environment/Train" instance=ExtResource("14_jbj1t")]
+[node name="CharacterModelSwapper" type="Node" parent="Environment/Train/lefthand" node_paths=PackedStringArray("target")]
+script = ExtResource("19_0ld40")
+target = NodePath("../Cube")
+models = ExtResource("18_yc10j")
+defer_until_letter_view_left = null
+metadata/_custom_type_script = "uid://4o225anfmcw5"
+
+[node name="guy" parent="Environment/Train" instance=ExtResource("13_a8y0u")]
 transform = Transform3D(0.008786198, 0, 0.149742, 0, 0.15, 0, -0.149742, 0, 0.008786198, -0.6141997, 1.25088, 0.388147)
-visible = false
 
-[node name="Body" parent="Environment/Train/hitman2/Armature/Skeleton3D" index="0"]
-layers = 2
-
-[node name="Cylinder" parent="Environment/Train/hitman2/Armature/Skeleton3D" index="2"]
-layers = 2
-
-[node name="guy2" parent="Environment/Train" instance=ExtResource("13_a8y0u")]
-transform = Transform3D(0.008786198, 0, 0.149742, 0, 0.15, 0, -0.149742, 0, 0.008786198, -0.6141997, 1.25088, 0.388147)
+[node name="CharacterModelSwapper" type="Node" parent="Environment/Train/guy" node_paths=PackedStringArray("target")]
+script = ExtResource("19_0ld40")
+target = NodePath("../Armature/Skeleton3D/Sphere")
+models = ExtResource("20_yc10j")
+defer_until_letter_view_left = null
+metadata/_custom_type_script = "uid://4o225anfmcw5"
 
 [node name="mirror" type="Node3D" parent="Environment/Train"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46888757, 1.0076202, -0.56658447)
@@ -751,6 +819,7 @@ mesh = SubResource("CylinderMesh_ya4ey")
 [node name="Marker3D" type="Marker3D" parent="Environment/Outdoors/Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.231007)
 
+[editable path="Environment/Train/Player/righthand"]
 [editable path="Environment/Train/train2"]
-[editable path="Environment/Train/hitman2"]
-[editable path="Environment/Train/guy2"]
+[editable path="Environment/Train/lefthand"]
+[editable path="Environment/Train/guy"]

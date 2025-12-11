@@ -78,14 +78,12 @@ func _put_down_choice():
 		hover_target.update_choice(held_choice)
 		held_choice = null
 	elif hover_target.can_place_choice:
-		print("can place choice")
 		held_choice.transform.origin = intersection
 		held_choice.put_down()
 		held_choice = null
 	else:
 		held_choice.rotation = previous_rotation
 		held_choice.global_transform.origin = previous_origin
-		print("previous origin ", previous_origin)
 		held_choice.put_down()
 		held_choice = null
 

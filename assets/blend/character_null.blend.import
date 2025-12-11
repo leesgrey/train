@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://f5s3c2hp007o"
-path="res://.godot/imported/lefthand.blend-7be4ab80e8f23abcd8ee33486803916f.scn"
+uid="uid://bfnychq1d6hji"
+path="res://.godot/imported/character_null.blend-66bce2a2cab1e6261479305100cf396c.scn"
 
 [deps]
 
-source_file="res://assets/lefthand.blend"
-dest_files=["res://.godot/imported/lefthand.blend-7be4ab80e8f23abcd8ee33486803916f.scn"]
+source_file="res://assets/blend/character_null.blend"
+dest_files=["res://.godot/imported/character_null.blend-66bce2a2cab1e6261479305100cf396c.scn"]
 
 [params]
 
@@ -37,7 +37,19 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"character_null_Sphere": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/character_null.res",
+"save_to_file/path": "uid://dusigrawjl31n"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
@@ -56,4 +68,4 @@ blender/materials/export_materials=1
 blender/animation/limit_playback=true
 blender/animation/always_sample=true
 blender/animation/group_tracks=true
-gltf/naming_version=2
+gltf/naming_version=0

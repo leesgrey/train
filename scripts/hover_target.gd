@@ -5,7 +5,6 @@ extends CollisionObject3D
 
 
 func hover():
-	#print("hovering ", get_name())
 	pass  # implement in inheriting classes
 
 

@@ -392,7 +392,7 @@ transform = Transform3D(-0.0076885456, -2.7348931e-10, -0.03925412, 0.015877165,
 
 [node name="RightHandModelSwapper" type="Node" parent="Environment/Train/Player/righthand" node_paths=PackedStringArray("target")]
 script = ExtResource("19_0ld40")
-target = NodePath("../Cube")
+target = NodePath("../Armature/Skeleton3D/Cube")
 models = ExtResource("5_yc10j")
 defer_until_letter_view_left = true
 metadata/_custom_type_script = "uid://4o225anfmcw5"
@@ -693,7 +693,7 @@ transform = Transform3D(0.0010678271, 0.021890117, -0.033461656, -0.020917477, 0
 script = ExtResource("19_0ld40")
 target = NodePath("../Cube")
 models = ExtResource("18_yc10j")
-defer_until_letter_view_left = null
+defer_until_letter_view_left = true
 metadata/_custom_type_script = "uid://4o225anfmcw5"
 
 [node name="guy" parent="Environment/Train" instance=ExtResource("13_a8y0u")]
@@ -703,7 +703,6 @@ transform = Transform3D(0.008786198, 0, 0.149742, 0, 0.15, 0, -0.149742, 0, 0.00
 script = ExtResource("19_0ld40")
 target = NodePath("../Armature/Skeleton3D/Sphere")
 models = ExtResource("20_yc10j")
-defer_until_letter_view_left = null
 metadata/_custom_type_script = "uid://4o225anfmcw5"
 
 [node name="mirror" type="Node3D" parent="Environment/Train"]

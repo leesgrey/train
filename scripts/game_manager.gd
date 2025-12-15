@@ -4,8 +4,8 @@ enum ChoiceType {CHARACTER, SETTING}
 enum Character {NONE, COWBOY, HITMAN, THIEF}
 enum Setting {NONE, DESERT, CITY}
 
-signal letter_view_entered
-signal letter_view_exited
+signal view_change_start
+signal view_change_end
 signal start
 signal character_changed
 signal setting_changed

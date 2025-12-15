@@ -3,7 +3,7 @@
 class_name CameraController
 extends Camera3D
 
-enum Facing { WINDOW, DESK, DOOR, CEILING, MIRROR }
+enum Facing {WINDOW, DESK, DOOR, CEILING, MIRROR}
 
 @export var window_target: Node3D
 @export var door_target: Node3D
@@ -25,6 +25,8 @@ var bone_up: Vector3
 
 var current_facing: Facing:
 	set(value):
+		if value == current_facing:
+			return
 		current_facing = value
 		turn_to(value)
 
@@ -54,37 +56,25 @@ func _input(event):
 	if input_enabled:
 		if event.is_action_pressed("look_up"):
 			if current_facing == Facing.DESK:
-				GameManager.letter_view_exited.emit()
-				#turn_to(mirror_target)
 				current_facing = Facing.MIRROR
 			else:
-				#turn_to(ceiling_target)
 				current_facing = Facing.CEILING
 		elif event.is_action_pressed("look_down"):
 			if current_facing == Facing.CEILING:
-				#turn_to(mirror_target)
 				current_facing = Facing.MIRROR
 			else:
-				#turn_to(desk_target)
-				GameManager.letter_view_entered.emit()
 				current_facing = Facing.DESK
 		elif event.is_action_pressed("look_left"):
 			if current_facing == Facing.DOOR:
-				#turn_to(mirror_target)
 				current_facing = Facing.MIRROR
 			else:
-				GameManager.letter_view_exited.emit()
-				#turn_to(window_target)
 				current_facing = Facing.WINDOW
 		elif event.is_action_pressed("look_right"):
 			if current_facing == Facing.WINDOW:
-				#turn_to(mirror_target)
 				current_facing = Facing.MIRROR
 			else:
-				GameManager.letter_view_exited.emit()
-				#turn_to(door_target)
 				current_facing = Facing.DOOR
-
+		
 
 func turn_to(facing: Facing, skip_tween := false):
 	if Engine.is_editor_hint():
@@ -98,6 +88,8 @@ func turn_to(facing: Facing, skip_tween := false):
 		transform = transform.looking_at(facing_to_target[facing].position)
 		return
 
+	GameManager.view_change_start.emit(facing)
+
 	if !skip_tween:
 		if turn_tween && turn_tween.is_running():
 			turn_tween.kill()
@@ -110,9 +102,10 @@ func turn_to(facing: Facing, skip_tween := false):
 			target_rotation = facing_to_rotation[facing].normalized()
 		else:
 			target_rotation = Quaternion.IDENTITY
-		# var start = skeleton.get_bone_pose_rotation(neck_bone).normalized()
 		turn_tween.parallel().tween_property(
 			skeleton, "bones/%s/rotation" % neck_bone, target_rotation, 0.15
 		)
+		turn_tween.tween_callback(GameManager.view_change_end.emit.bind(facing))
 	else:
 		transform = transform.looking_at(facing_to_target[facing].position)
+		GameManager.view_change_end.emit(facing)

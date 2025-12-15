@@ -20,8 +20,8 @@ var previous_rotation: Vector3
 
 
 func _ready() -> void:
-	GameManager.letter_view_entered.connect(_on_letter_view_entered)
-	GameManager.letter_view_exited.connect(_on_letter_view_exited)
+	GameManager.view_change_start.connect(_on_view_change_start)
+	GameManager.view_change_end.connect(_on_view_change_end)
 
 
 func _input(event: InputEvent) -> void:
@@ -34,7 +34,7 @@ func _input(event: InputEvent) -> void:
 			# move right hand
 			right_hand.transform.origin = (
 				camera.project_position(event.position, 0.4) + Vector3(-0.05, 0, 0.12)
-			)  # temp offset, remove once rigged
+			) # temp offset, remove once rigged
 
 			# move held choice
 			if held_choice:
@@ -107,14 +107,19 @@ func _physics_process(_delta: float) -> void:
 			intersection = result.position
 			if result.collider != hover_target:
 				if hover_target:
-					hover_target.unhover()  # old
-				hover_target = result.collider  # change
-				hover_target.hover()  # new
+					hover_target.unhover() # old
+				hover_target = result.collider # change
+				hover_target.hover() # new
 
 
-func _on_letter_view_entered():
-	mouse_enabled = true
-
-
-func _on_letter_view_exited():
+func _on_view_change_start(_view: CameraController.Facing):
+	print("view change end")
 	mouse_enabled = false
+
+
+func _on_view_change_end(view: CameraController.Facing):
+	print("view change end")
+	if (view == CameraController.Facing.DESK or view == CameraController.Facing.DOOR):
+		mouse_enabled = true
+	else:
+		mouse_enabled = false

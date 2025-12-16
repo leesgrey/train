@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterSwapInfo" load_steps=6 format=3 uid="uid://dv0dargd0cf21"]
+
+[ext_resource type="ArrayMesh" uid="uid://vhpwtwfw3xx5" path="res://assets/luggage_null.res" id="1_3rffo"]
+[ext_resource type="Script" uid="uid://ch2cpj7p7528x" path="res://scripts/swapping/character_swap_info.gd" id="1_lv3xb"]
+[ext_resource type="ArrayMesh" uid="uid://2w7jkluxb2k2" path="res://assets/luggage_cowboy.res" id="2_kjhpp"]
+[ext_resource type="ArrayMesh" uid="uid://dvaqqin24tnuy" path="res://assets/luggage_hitman.res" id="3_yr8mk"]
+[ext_resource type="ArrayMesh" uid="uid://lksnj5uh4hb8" path="res://assets/luggage_thief.res" id="4_5fpic"]
+
+[resource]
+script = ExtResource("1_lv3xb")
+models = Dictionary[int, Mesh]({
+0: ExtResource("1_3rffo"),
+1: ExtResource("2_kjhpp"),
+2: ExtResource("3_yr8mk"),
+3: ExtResource("4_5fpic")
+})
+metadata/_custom_type_script = "uid://ch2cpj7p7528x"
